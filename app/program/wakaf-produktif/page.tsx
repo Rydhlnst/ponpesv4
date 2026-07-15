@@ -8,6 +8,19 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 
+const sapiPhotos = [
+  { src: "/images/sapi/sapi-01.jpg", alt: "Sapi program wakaf pesantren" },
+  { src: "/images/sapi/sapi-02.jpg", alt: "Sapi ternak pesantren Darussalam Bacan" },
+  { src: "/images/sapi/sapi-03.jpg", alt: "Sapi di padang rumput pesantren" },
+  { src: "/images/sapi/sapi-04.jpg", alt: "Koleksi sapi wakaf produktif" },
+  { src: "/images/sapi/sapi-05.jpg", alt: "Sapi program 1 santri 1 sapi" },
+]
+
+const unggasPhotos = [
+  { src: "/images/unggas/unggas-01.jpg", alt: "Pimpinan pesantren memberi makan merpati dan bebek" },
+  { src: "/images/unggas/unggas-02.jpg", alt: "Ternak unggas di lingkungan pesantren Darussalam Bacan" },
+]
+
 const ternak = [
   { emoji: "🐄", name: "Sapi", count: "4 ekor", desc: "Sapi perah dan potong untuk kemandirian pesantren" },
   { emoji: "🐐", name: "Kambing", count: "20 ekor", desc: "Kambing Etawa — susu dan daging untuk santri" },
@@ -67,9 +80,29 @@ export default function WakafProduktifPage() {
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.12 }}
-                  className="relative h-56 overflow-hidden"
                 >
-                  <Image src="/images/gallery/gallery-15.jpg" alt="Lahan Pesantren Darussalam Bacan" fill className="object-cover" />
+                  <h2 className="text-2xl font-black text-gray-900 mb-4">Foto Ternak Sapi</h2>
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="relative h-48 overflow-hidden col-span-2">
+                      <Image src={sapiPhotos[0].src} alt={sapiPhotos[0].alt} fill className="object-cover" />
+                    </div>
+                    {sapiPhotos.slice(1).map((photo, i) => (
+                      <div key={i} className="relative h-36 overflow-hidden">
+                        <Image src={photo.src} alt={photo.alt} fill className="object-cover" />
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+
+                <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.14 }}>
+                  <h2 className="text-2xl font-black text-gray-900 mb-4">Foto Ternak Unggas</h2>
+                  <div className="grid grid-cols-2 gap-2">
+                    {unggasPhotos.map((photo, i) => (
+                      <div key={i} className="relative h-44 overflow-hidden">
+                        <Image src={photo.src} alt={photo.alt} fill className="object-cover" />
+                      </div>
+                    ))}
+                  </div>
                 </motion.div>
 
                 <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.16 }}>

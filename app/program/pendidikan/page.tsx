@@ -98,9 +98,22 @@ export default function PendidikanPage() {
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 }}
-                  className="relative h-64 overflow-hidden"
                 >
-                  <Image src="/images/gallery/gallery-12.jpg" alt="Kelas Darussalam Bacan" fill className="object-cover" />
+                  <h2 className="text-2xl font-black text-gray-900 mb-4">Kegiatan Olahraga Santri</h2>
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="relative h-48 overflow-hidden col-span-2">
+                      <Image src="/images/olahraga/olahraga-01.jpg" alt="Santri bermain basket di halaman pesantren" fill className="object-cover" />
+                    </div>
+                    <div className="relative h-36 overflow-hidden">
+                      <Image src="/images/olahraga/olahraga-02.jpg" alt="Kegiatan voli santri Darussalam Bacan" fill className="object-cover" />
+                    </div>
+                    <div className="relative h-36 overflow-hidden">
+                      <Image src="/images/olahraga/olahraga-03.jpg" alt="Tim voli santri putra" fill className="object-cover" />
+                    </div>
+                    <div className="relative h-36 overflow-hidden col-span-2">
+                      <Image src="/images/olahraga/olahraga-04.jpg" alt="Tim voli santri putri Darussalam Bacan" fill className="object-cover" />
+                    </div>
+                  </div>
                 </motion.div>
 
                 <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.14 }}>

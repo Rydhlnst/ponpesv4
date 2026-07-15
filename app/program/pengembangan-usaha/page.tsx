@@ -69,9 +69,40 @@ export default function PengembanganUsahaPage() {
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.12 }}
-                  className="relative h-56 overflow-hidden"
                 >
-                  <Image src="/images/gallery/gallery-20.jpg" alt="Pesantren Darussalam Bacan" fill className="object-cover" />
+                  <h2 className="text-2xl font-black text-gray-900 mb-4">Foto Kegiatan Usaha Mandiri</h2>
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="relative h-52 overflow-hidden col-span-2">
+                      <Image src="/images/usaha/usaha-01.jpg" alt="Panen tomat pesantren Darussalam Bacan" fill className="object-cover" />
+                    </div>
+                    <div className="relative h-36 overflow-hidden">
+                      <Image src="/images/usaha/usaha-02.jpg" alt="Santri memilah hasil panen tomat" fill className="object-cover" />
+                    </div>
+                    <div className="relative h-36 overflow-hidden">
+                      <Image src="/images/usaha/usaha-03.jpg" alt="Hasil panen tomat pesantren siap jual" fill className="object-cover" />
+                    </div>
+                    <div className="relative h-36 overflow-hidden">
+                      <Image src="/images/usaha/usaha-04.jpg" alt="Lahan pertanian buah naga pesantren" fill className="object-cover" />
+                    </div>
+                    <div className="relative h-36 overflow-hidden">
+                      <Image src="/images/usaha/usaha-05.jpg" alt="Kebun sayur pesantren Darussalam Bacan" fill className="object-cover" />
+                    </div>
+                    <div className="relative h-52 overflow-hidden col-span-2">
+                      <Image src="/images/usaha/usaha-06.jpg" alt="Kebun kangkung dan sayuran pesantren" fill className="object-cover" />
+                    </div>
+                    <div className="relative h-36 overflow-hidden">
+                      <Image src="/images/usaha/usaha-07.jpg" alt="Hasil panen kangkung siap jual" fill className="object-cover" />
+                    </div>
+                    <div className="relative h-36 overflow-hidden">
+                      <Image src="/images/usaha/usaha-08.jpg" alt="Ikat kangkung hasil kebun pesantren" fill className="object-cover" />
+                    </div>
+                    <div className="relative h-36 overflow-hidden">
+                      <Image src="/images/usaha/usaha-09.jpg" alt="Panen timun pesantren Darussalam Bacan" fill className="object-cover" />
+                    </div>
+                    <div className="relative h-36 overflow-hidden">
+                      <Image src="/images/usaha/usaha-10.jpg" alt="Timbang timun hasil panen pesantren" fill className="object-cover" />
+                    </div>
+                  </div>
                 </motion.div>
 
                 <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.16 }}>
