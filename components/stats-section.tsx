@@ -32,9 +32,9 @@ export function StatsSection({ items }: { items: StatItem[] }) {
   const inView = useInView(ref, { once: true, margin: "-80px" })
 
   return (
-    <section ref={ref} className="py-16 bg-white border-t border-b border-gray-100">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-0 divide-x divide-gray-100">
+    <section ref={ref} className="py-10 md:py-16 bg-white border-t border-b border-gray-100">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-gray-100">
           {items.map((s, i) => {
             const Icon = ICONS[i % ICONS.length]
             return (
@@ -43,17 +43,17 @@ export function StatsSection({ items }: { items: StatItem[] }) {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.08 }}
-                className="px-8 py-10 first:pl-0 last:pr-0"
+                className="bg-white px-4 sm:px-8 py-6 sm:py-10"
               >
-                <div className="flex items-center gap-2 mb-4">
+                <div className="flex items-center gap-2 mb-3 sm:mb-4">
                   <Icon className="w-4 h-4 text-primary" />
-                  <div className="w-8 h-0.5 bg-primary" />
+                  <div className="w-6 sm:w-8 h-0.5 bg-primary" />
                 </div>
-                <p className="text-4xl font-black text-gray-900 tracking-tight mb-1">
+                <p className="text-2xl sm:text-4xl font-black text-primary tracking-tight mb-1">
                   <Counter to={s.value} suffix={s.suffix} />
                 </p>
-                <p className="text-primary font-semibold text-sm mb-1">{s.label}</p>
-                <p className="text-gray-400 text-xs">{s.desc}</p>
+                <p className="text-primary font-semibold text-xs sm:text-sm mb-1">{s.label}</p>
+                <p className="text-gray-400 text-xs leading-relaxed">{s.desc}</p>
               </motion.div>
             )
           })}

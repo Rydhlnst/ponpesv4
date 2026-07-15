@@ -18,8 +18,8 @@ interface PageHeroProps {
 
 export function PageHero({ title, subtitle, crumbs, accent }: PageHeroProps) {
   return (
-    <section className="bg-white pt-20 border-b border-gray-100">
-      <div className="container mx-auto px-6 py-14">
+    <section className="bg-white pt-16 sm:pt-20 border-b border-gray-100">
+      <div className="container mx-auto px-4 sm:px-6 py-8 md:py-14">
         {/* Breadcrumb */}
         <motion.nav
           initial={{ opacity: 0, y: 8 }}
@@ -55,7 +55,7 @@ export function PageHero({ title, subtitle, crumbs, accent }: PageHeroProps) {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.08 }}
-          className="text-4xl md:text-5xl font-black text-gray-900 leading-tight tracking-tight mb-4"
+          className="text-2xl sm:text-4xl md:text-5xl font-black text-gray-900 leading-tight tracking-tight mb-4"
         >
           {title}
         </motion.h1>

@@ -31,10 +31,10 @@ export function HowToDonate() {
   const inView = useInView(ref, { once: true, margin: "-80px" })
 
   return (
-    <section ref={ref} className="py-20 bg-gray-50">
-      <div className="container mx-auto px-6">
+    <section ref={ref} className="py-12 md:py-20 bg-gray-50">
+      <div className="container mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-14 gap-4">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-8 md:mb-14 gap-4">
           <div>
             <div className="flex items-center gap-2 mb-3">
               <div className="w-6 h-0.5 bg-primary" />
@@ -46,7 +46,7 @@ export function HowToDonate() {
               initial={{ opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.05 }}
-              className="text-3xl md:text-4xl font-black text-gray-900"
+              className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900"
             >
               Mudah & Hanya 3 Langkah
             </motion.h2>
@@ -58,7 +58,7 @@ export function HowToDonate() {
           >
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-none px-10 font-semibold"
+              className="w-full md:w-auto bg-primary hover:bg-primary/90 text-primary-foreground rounded-none px-10 font-semibold"
             >
               <Heart className="w-4 h-4 fill-white" />
               Mulai Berdonasi
@@ -74,10 +74,10 @@ export function HowToDonate() {
               initial={{ opacity: 0, y: 24 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: i * 0.12 }}
-              className="group p-8 bg-white hover:bg-primary transition-colors"
+              className="group p-5 sm:p-8 bg-white hover:bg-primary transition-colors"
             >
               <div className="flex items-start gap-5 mb-5">
-                <span className="text-5xl font-black text-gray-100 group-hover:text-primary-foreground/30 transition-colors leading-none select-none">
+                <span className="text-5xl font-black text-primary/20 group-hover:text-primary-foreground/30 transition-colors leading-none select-none">
                   {step.num}
                 </span>
               </div>

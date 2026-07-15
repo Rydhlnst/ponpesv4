@@ -44,9 +44,9 @@ export default function PendidikanPage() {
           accent="Pendidikan Formal"
         />
 
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <section className="py-10 md:py-16 bg-white">
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="space-y-10">
                 <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
                   <div className="flex items-center gap-2 mb-5">

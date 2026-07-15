@@ -19,8 +19,8 @@ export function PartnersSection() {
   const inView = useInView(ref, { once: true, margin: "-80px" })
 
   return (
-    <section ref={ref} className="py-16 bg-white border-t border-gray-100">
-      <div className="container mx-auto px-6">
+    <section ref={ref} className="py-10 md:py-16 bg-white border-t border-gray-100">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}

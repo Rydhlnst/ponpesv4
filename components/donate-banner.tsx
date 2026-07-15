@@ -11,10 +11,10 @@ export function DonateBanner() {
 
   return (
     <section ref={ref} className="bg-primary">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
           {/* Left: text */}
-          <div className="py-16 lg:py-20 lg:pr-16 border-b lg:border-b-0 lg:border-r border-primary-foreground/20">
+          <div className="py-10 lg:py-20 lg:pr-16 border-b lg:border-b-0 lg:border-r border-primary-foreground/20">
             <motion.div
               initial={{ opacity: 0, x: -16 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -30,7 +30,7 @@ export function DonateBanner() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.1 }}
-              className="text-3xl md:text-5xl font-black text-white leading-tight mb-5"
+              className="text-2xl sm:text-3xl md:text-5xl font-black text-white leading-tight mb-4 sm:mb-5"
             >
               Kunjungi atau<br />Dukung Pesantren Kami
             </motion.h2>
@@ -58,7 +58,7 @@ export function DonateBanner() {
           </div>
 
           {/* Right: actions */}
-          <div className="py-16 lg:py-20 lg:pl-16 flex flex-col justify-center gap-4">
+          <div className="py-8 lg:py-20 lg:pl-16 flex flex-col justify-center gap-4">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}

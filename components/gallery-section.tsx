@@ -50,8 +50,8 @@ export function GallerySection({ defaultShowAll = false }: GallerySectionProps) 
 
   return (
     <>
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-6">
+      <section className="py-10 md:py-16 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
           {/* Header */}
           <div ref={ref} className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-4">
             <div>

@@ -56,8 +56,8 @@ export function NewsSection() {
   const inView = useInView(ref, { once: true, margin: "-80px" })
 
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <section className="py-10 md:py-16 bg-gray-50">
+      <div className="container mx-auto px-4 sm:px-6">
         {/* Header */}
         <div ref={ref} className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-10 gap-4">
           <div>
@@ -72,7 +72,7 @@ export function NewsSection() {
               initial={{ opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.1 }}
-              className="text-3xl md:text-4xl font-bold text-gray-900"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900"
             >
               Kabar Yatim
             </motion.h2>

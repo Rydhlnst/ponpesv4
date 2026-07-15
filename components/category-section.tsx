@@ -23,8 +23,32 @@ export function CategorySection() {
 
   return (
     <section ref={ref} className="py-10 bg-gray-50 border-t border-b border-gray-100">
-      <div className="container mx-auto px-6">
-        <div className="flex gap-0 overflow-x-auto no-scrollbar border border-gray-200 divide-x divide-gray-200">
+      <div className="container mx-auto px-4 sm:px-6">
+
+        {/* Mobile: 3×3 grid — all 9 programs visible at once */}
+        <div className="sm:hidden grid grid-cols-3 gap-px bg-gray-200 border border-gray-200">
+          {programs.map((p, i) => (
+            <motion.div
+              key={p.label}
+              initial={{ opacity: 0, y: 12 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: i * 0.05 }}
+            >
+              <Link
+                href={p.href}
+                className="group flex flex-col items-center justify-center gap-1.5 py-4 px-1 bg-white active:bg-primary/10 transition-colors min-h-[76px]"
+              >
+                <p.icon className="w-4 h-4 text-primary flex-none" />
+                <span className="font-semibold text-gray-800 text-[11px] leading-tight text-center">
+                  {p.label}
+                </span>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Tablet+: horizontal scroll */}
+        <div className="hidden sm:flex gap-0 overflow-x-auto no-scrollbar border border-gray-200 divide-x divide-gray-200">
           {programs.map((p, i) => (
             <motion.div
               key={p.label}
@@ -37,7 +61,7 @@ export function CategorySection() {
                 href={p.href}
                 className="group flex flex-col items-center gap-2 px-8 py-5 bg-white hover:bg-primary transition-colors w-full h-full"
               >
-                <p.icon className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
+                <p.icon className="w-5 h-5 text-primary group-hover:text-white transition-colors" />
                 <div className="text-center">
                   <p className="font-semibold text-gray-900 group-hover:text-white text-sm leading-tight transition-colors">
                     {p.label}

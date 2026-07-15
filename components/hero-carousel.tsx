@@ -44,7 +44,7 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
         <div className="flex h-full">
           {slides.map((s, i) => (
             <div key={s.id} className="relative flex-none w-full h-full bg-brand-dark">
-              {/* Full-bleed background image with left gradient */}
+              {/* Full-bleed background image */}
               <Image
                 src={s.imageSrc}
                 alt="Pondok Pesantren Darussalam Bacan"
@@ -52,16 +52,18 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
                 className="object-cover opacity-70"
                 priority={i === 0}
               />
-              {/* Gradient: strong on left (text area), fades to transparent on right */}
-              <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/50 to-brand-dark/10" />
+              {/* Mobile: bottom-to-top gradient (text sits at bottom) */}
+              <div className="absolute inset-0 sm:hidden bg-gradient-to-t from-brand-dark via-brand-dark/75 to-brand-dark/20" />
+              {/* Desktop: left-to-right gradient */}
+              <div className="absolute inset-0 hidden sm:block bg-gradient-to-r from-brand-dark/90 via-brand-dark/50 to-brand-dark/10" />
             </div>
           ))}
         </div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex items-end" style={{ minHeight: "min(100vh, 720px)", paddingTop: 80 }}>
-        <div className="container mx-auto px-6 pb-24">
+      <div className="relative z-10 flex items-end" style={{ minHeight: "min(100vh, 720px)", paddingTop: 64 }}>
+        <div className="container mx-auto px-4 sm:px-6 pb-16 sm:pb-24">
           <AnimatePresence mode="wait">
             <motion.div
               key={`text-${current}`}
@@ -75,7 +77,7 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.05 }}
-                className="inline-flex items-center gap-2 mb-6"
+                className="inline-flex items-center gap-2 mb-4 sm:mb-6"
               >
                 <div className="w-6 h-0.5 bg-white/60" />
                 <span className="text-brand-muted text-xs font-semibold uppercase tracking-widest flex items-center gap-1.5">
@@ -88,7 +90,7 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight whitespace-pre-line mb-6"
+                className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight whitespace-pre-line mb-4 sm:mb-6"
               >
                 {slide.title}
               </motion.h1>
@@ -97,7 +99,7 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="text-white/65 text-base leading-relaxed mb-8 max-w-md"
+                className="text-white/65 text-sm sm:text-base leading-relaxed mb-6 sm:mb-8 max-w-md"
               >
                 {slide.subtitle}
               </motion.p>
@@ -106,10 +108,10 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.28 }}
-                className="flex gap-3"
+                className="flex flex-wrap gap-2 sm:gap-3"
               >
                 <Link href={slide.ctaHref}>
-                  <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-none px-8 h-12 font-semibold text-sm">
+                  <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-none px-6 sm:px-8 h-10 sm:h-12 font-semibold text-sm">
                     <Heart className="w-4 h-4 fill-white" />
                     {slide.cta}
                   </Button>
@@ -117,7 +119,7 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
                 <Link href="/tentang">
                   <Button
                     variant="outline"
-                    className="border-white/20 text-white hover:bg-white/10 hover:border-white/40 rounded-none px-8 h-12 text-sm bg-transparent"
+                    className="border-white/20 text-white hover:bg-white/10 hover:border-white/40 rounded-none px-6 sm:px-8 h-10 sm:h-12 text-sm bg-transparent"
                   >
                     Pelajari Lebih
                     <ArrowRight className="w-4 h-4" />

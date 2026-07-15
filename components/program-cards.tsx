@@ -95,8 +95,8 @@ export function ProgramCards() {
   const inView = useInView(ref, { once: true, margin: "-60px" })
 
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-6">
+    <section className="py-10 md:py-16 bg-white">
+      <div className="container mx-auto px-4 sm:px-6">
         {/* Heading */}
         <div ref={ref} className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-4">
           <div>
@@ -112,7 +112,7 @@ export function ProgramCards() {
               initial={{ opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.1 }}
-              className="text-3xl md:text-4xl font-black text-gray-900"
+              className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900"
             >
               Pilih Program Donasi
             </motion.h2>

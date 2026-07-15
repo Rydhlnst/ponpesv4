@@ -61,7 +61,7 @@ const legalLinks = [
 export function Footer() {
   return (
     <footer className="bg-brand-dark text-white/60">
-      <div className="container mx-auto px-4 py-14">
+      <div className="container mx-auto px-4 py-10 md:py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-2">
@@ -91,7 +91,7 @@ export function Footer() {
               </div>
               <div className="flex gap-2.5 items-center">
                 <Mail className="w-4 h-4 text-primary flex-none" />
-                <span className="text-white/50">ponpesantren.darussalam@bacan.com</span>
+                <span className="text-white/50 break-all">ponpesantren.darussalam@bacan.com</span>
               </div>
             </div>
           </div>
