@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { FaWhatsapp, FaInstagram, FaTiktok, FaFacebookF } from "react-icons/fa"
+import { FaWhatsapp, FaInstagram, FaTiktok, FaFacebookF, FaYoutube } from "react-icons/fa"
 import { Share2, X } from "lucide-react"
 
 const WA_NUMBER = "6282297829892"
@@ -19,23 +19,30 @@ const socials = [
   {
     label: "Instagram",
     icon: FaInstagram,
-    href: "https://instagram.com/darussalambacan",
+    href: "https://www.instagram.com/yayasandarussalambacan?igsh=Yjc3b2pvOGVld20=",
     bg: "bg-gradient-to-br from-[#f09433] via-[#e6683c] to-[#bc1888]",
     hover: "hover:opacity-90",
   },
   {
-    label: "TikTok",
-    icon: FaTiktok,
-    href: "https://tiktok.com/@darussalambacan",
-    bg: "bg-[#010101]",
-    hover: "hover:bg-[#2a2a2a]",
-  },
-  {
     label: "Facebook",
     icon: FaFacebookF,
-    href: "https://facebook.com/darussalambacan",
+    href: "https://www.facebook.com/share/p/17JZZyXQXZ/",
     bg: "bg-[#1877F2]",
     hover: "hover:bg-[#1560cc]",
+  },
+  {
+    label: "YouTube",
+    icon: FaYoutube,
+    href: "https://youtube.com/@darussalambacan1222?si=Yi-74n7D-c2EDKAc",
+    bg: "bg-[#FF0000]",
+    hover: "hover:bg-[#cc0000]",
+  },
+  {
+    label: "TikTok",
+    icon: FaTiktok,
+    href: "https://www.tiktok.com/@yayasandarussalambacan?_r=1&_t=ZS-982qlFArjpl",
+    bg: "bg-[#010101]",
+    hover: "hover:bg-[#2a2a2a]",
   },
 ]
 
