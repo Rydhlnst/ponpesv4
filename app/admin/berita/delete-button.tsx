@@ -4,7 +4,7 @@ import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { Trash2 } from "lucide-react"
 
-export function DeleteArticleButton({ id, title }: { id: string; title: string }) {
+export function DeleteArticleButton({ id, title }: { id: number; title: string }) {
   const router = useRouter()
   const [confirm, setConfirm] = useState(false)
   const [loading, setLoading] = useState(false)

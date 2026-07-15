@@ -19,7 +19,7 @@ export default function AdminKontakPage() {
     setData({ ...data, [key]: value })
   }
 
-  function updateBank(i: number, field: keyof BankInfo, value: string) {
+  function updateBank(i: number, field: keyof Pick<BankInfo, "bank" | "noRek" | "atasNama">, value: string) {
     if (!data) return
     const banks = [...data.banks]
     banks[i] = { ...banks[i], [field]: value }
@@ -30,7 +30,7 @@ export default function AdminKontakPage() {
     if (!data) return
     setData({
       ...data,
-      banks: [...data.banks, { id: Date.now().toString(), bank: "", noRek: "", atasNama: "" }],
+      banks: [...data.banks, { id: -Date.now(), bank: "", noRek: "", atasNama: "", sortOrder: data.banks.length }],
     })
   }
 

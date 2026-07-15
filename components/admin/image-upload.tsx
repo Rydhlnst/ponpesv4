@@ -67,7 +67,6 @@ export function ImageUpload({
     [folder]
   )
 
-  const isR2Url = value.startsWith("http")
   const hasImage = Boolean(value)
 
   return (
@@ -99,7 +98,7 @@ export function ImageUpload({
               alt="Preview"
               fill
               className="object-cover"
-              unoptimized={isR2Url}
+              unoptimized={!value.startsWith("/")}
             />
             <div className="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
               <div className="flex items-center gap-1.5 bg-white/10 backdrop-blur px-3 py-1.5 text-white text-xs font-semibold">

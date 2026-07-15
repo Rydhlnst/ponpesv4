@@ -3,8 +3,8 @@ import { getArticles } from "@/lib/data"
 import { Plus, CheckCircle2, Clock, Star } from "lucide-react"
 import { DeleteArticleButton } from "./delete-button"
 
-export default function AdminBeritaPage() {
-  const articles = getArticles()
+export default async function AdminBeritaPage() {
+  const articles = await getArticles()
 
   return (
     <div className="max-w-4xl">

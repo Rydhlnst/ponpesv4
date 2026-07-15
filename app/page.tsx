@@ -10,20 +10,19 @@ import { QuoteSection } from "@/components/quote-section"
 import { PartnersSection } from "@/components/partners-section"
 import { DonateBanner } from "@/components/donate-banner"
 import { Footer } from "@/components/footer"
-import { getHero, getStats } from "@/lib/data"
+import { getHeroSlides, getStats } from "@/lib/data"
 
 export const dynamic = "force-dynamic"
 
-export default function Home() {
-  const hero = getHero()
-  const stats = getStats()
+export default async function Home() {
+  const [slides, statItems] = await Promise.all([getHeroSlides(), getStats()])
 
   return (
     <>
       <Navbar />
       <main>
-        <HeroCarousel slides={hero.slides} />
-        <StatsSection items={stats.items} />
+        <HeroCarousel slides={slides} />
+        <StatsSection items={statItems} />
         <WhyUsSection />
         <CategorySection />
         <GallerySection />

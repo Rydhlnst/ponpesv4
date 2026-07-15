@@ -1,104 +1,89 @@
-import fs from "fs"
-import path from "path"
-
-const DATA_DIR = path.join(process.cwd(), "data")
-
-function readJson<T>(filename: string): T {
-  const filePath = path.join(DATA_DIR, filename)
-  const raw = fs.readFileSync(filePath, "utf-8")
-  return JSON.parse(raw) as T
-}
-
-function writeJson(filename: string, data: unknown): void {
-  const filePath = path.join(DATA_DIR, filename)
-  fs.writeFileSync(filePath, JSON.stringify(data, null, 2), "utf-8")
-}
+import { db } from "@/lib/db"
+import { articles, heroSlides, stats, kontak, bankInfo } from "@/lib/db/schema"
+import { eq, desc, asc } from "drizzle-orm"
 
 // --- Articles ---
-export interface Article {
-  id: string
-  title: string
-  excerpt: string
-  date: string
-  category: string
-  image: string
-  featured: boolean
-  published: boolean
+export type { Article, NewArticle } from "@/lib/db/schema"
+
+export async function getArticles() {
+  return db.select().from(articles).orderBy(desc(articles.createdAt))
 }
 
-export function getArticles(): Article[] {
-  return readJson<Article[]>("articles.json")
+export async function getArticleById(id: number) {
+  const rows = await db.select().from(articles).where(eq(articles.id, id))
+  return rows[0] ?? null
 }
 
-export function saveArticles(articles: Article[]): void {
-  writeJson("articles.json", articles)
+export async function createArticle(data: typeof articles.$inferInsert) {
+  const rows = await db.insert(articles).values(data).returning()
+  return rows[0]
 }
 
-// --- Stats ---
-export interface StatItem {
-  value: number
-  suffix: string
-  label: string
-  desc: string
+export async function updateArticle(id: number, data: Partial<typeof articles.$inferInsert>) {
+  const rows = await db.update(articles).set(data).where(eq(articles.id, id)).returning()
+  return rows[0] ?? null
 }
 
-export interface StatsData {
-  items: StatItem[]
-}
-
-export function getStats(): StatsData {
-  return readJson<StatsData>("stats.json")
-}
-
-export function saveStats(data: StatsData): void {
-  writeJson("stats.json", data)
+export async function deleteArticle(id: number) {
+  const rows = await db.delete(articles).where(eq(articles.id, id)).returning()
+  return rows[0] ?? null
 }
 
 // --- Hero ---
-export interface HeroSlide {
-  id: string
-  category: string
-  categoryIcon: string
-  title: string
-  subtitle: string
-  cta: string
-  ctaHref: string
-  imageSrc: string
+export type { HeroSlide, NewHeroSlide } from "@/lib/db/schema"
+
+export async function getHeroSlides() {
+  return db.select().from(heroSlides).orderBy(asc(heroSlides.sortOrder))
 }
 
-export interface HeroData {
-  slides: HeroSlide[]
+export async function replaceHeroSlides(slides: (typeof heroSlides.$inferInsert)[]) {
+  await db.delete(heroSlides)
+  if (slides.length === 0) return []
+  return db.insert(heroSlides).values(slides).returning()
 }
 
-export function getHero(): HeroData {
-  return readJson<HeroData>("hero.json")
+// --- Stats ---
+export type { Stat, NewStat } from "@/lib/db/schema"
+
+export async function getStats() {
+  return db.select().from(stats).orderBy(asc(stats.sortOrder))
 }
 
-export function saveHero(data: HeroData): void {
-  writeJson("hero.json", data)
+export async function replaceStats(items: (typeof stats.$inferInsert)[]) {
+  await db.delete(stats)
+  if (items.length === 0) return []
+  return db.insert(stats).values(items).returning()
 }
 
 // --- Kontak ---
-export interface BankInfo {
-  id: string
-  bank: string
-  noRek: string
-  atasNama: string
+export type { Kontak, NewKontak, BankInfo, NewBankInfo } from "@/lib/db/schema"
+
+// --- Backward-compat aliases for components ---
+export type { Stat as StatItem } from "@/lib/db/schema"
+export type HeroData = { slides: import("@/lib/db/schema").HeroSlide[] }
+export type StatsData = { items: import("@/lib/db/schema").Stat[] }
+export type KontakData = import("@/lib/db/schema").Kontak & {
+  banks: import("@/lib/db/schema").BankInfo[]
 }
 
-export interface KontakData {
-  phone: string
-  phoneDisplay: string
-  email: string
-  address: string
-  mapsEmbed: string
-  banks: BankInfo[]
+export async function getKontak() {
+  const [kontakRow] = await db.select().from(kontak).limit(1)
+  const banks = await db.select().from(bankInfo).orderBy(asc(bankInfo.sortOrder))
+  return kontakRow ? { ...kontakRow, banks } : null
 }
 
-export function getKontak(): KontakData {
-  return readJson<KontakData>("kontak.json")
+export async function upsertKontak(data: typeof kontak.$inferInsert) {
+  const [existing] = await db.select().from(kontak).limit(1)
+  if (existing) {
+    const rows = await db.update(kontak).set(data).where(eq(kontak.id, existing.id)).returning()
+    return rows[0]
+  }
+  const rows = await db.insert(kontak).values(data).returning()
+  return rows[0]
 }
 
-export function saveKontak(data: KontakData): void {
-  writeJson("kontak.json", data)
+export async function replaceBanks(items: (typeof bankInfo.$inferInsert)[]) {
+  await db.delete(bankInfo)
+  if (items.length === 0) return []
+  return db.insert(bankInfo).values(items).returning()
 }

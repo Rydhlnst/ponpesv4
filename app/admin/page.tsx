@@ -2,9 +2,8 @@ import Link from "next/link"
 import { getArticles, getStats } from "@/lib/data"
 import { Newspaper, BarChart2, Image, Phone, ArrowRight, CheckCircle2, Clock } from "lucide-react"
 
-export default function AdminDashboard() {
-  const articles = getArticles()
-  const stats = getStats()
+export default async function AdminDashboard() {
+  const [articles, statItems] = await Promise.all([getArticles(), getStats()])
 
   const published = articles.filter((a) => a.published).length
   const draft = articles.filter((a) => !a.published).length
@@ -20,7 +19,7 @@ export default function AdminDashboard() {
     },
     {
       label: "Statistik Beranda",
-      value: `${stats.items.length} angka`,
+      value: `${statItems.length} angka`,
       sub: "Santri, yatim, guru, tahun berdiri",
       href: "/admin/stats",
       icon: BarChart2,

@@ -19,7 +19,7 @@ export function ArticleForm({ article, mode }: Props) {
   const [loading, setLoading] = useState(false)
   const [saved, setSaved] = useState(false)
 
-  const [form, setForm] = useState<Omit<Article, "id">>({
+  const [form, setForm] = useState<Omit<Article, "id" | "createdAt">>({
     title: article?.title ?? "",
     excerpt: article?.excerpt ?? "",
     date: article?.date ?? new Date().toLocaleDateString("id-ID", { month: "long", year: "numeric" }),
