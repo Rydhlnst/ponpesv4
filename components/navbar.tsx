@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Button } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 import { Menu, X, ChevronDown, Heart } from "lucide-react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
@@ -139,15 +139,12 @@ export function Navbar() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <Button
-              asChild
-              className="hidden md:flex bg-primary hover:bg-primary/90 text-primary-foreground rounded-none text-sm px-5 h-9 font-semibold"
-              size="sm"
+            <Link
+              href="/kontak"
+              className={cn(buttonVariants({ size: "sm" }), "hidden md:flex bg-primary hover:bg-primary/90 text-primary-foreground rounded-none text-sm px-5 h-9 font-semibold")}
             >
-              <Link href="/kontak">
-                Hubungi Kami
-              </Link>
-            </Button>
+              Hubungi Kami
+            </Link>
             <button
               className={cn("md:hidden p-1.5", scrolled ? "text-gray-700" : "text-white")}
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -220,11 +217,13 @@ export function Navbar() {
                 </div>
               ))}
               <div className="pt-3">
-                <Button asChild className="w-full bg-primary hover:bg-primary/90 rounded-none">
-                  <Link href="/kontak" onClick={() => setMobileOpen(false)}>
-                    Hubungi Kami
-                  </Link>
-                </Button>
+                <Link
+                  href="/kontak"
+                  onClick={() => setMobileOpen(false)}
+                  className={cn(buttonVariants(), "w-full bg-primary hover:bg-primary/90 rounded-none")}
+                >
+                  Hubungi Kami
+                </Link>
               </div>
             </div>
           </motion.div>

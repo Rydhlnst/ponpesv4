@@ -42,7 +42,7 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
       {/* Slide backgrounds */}
       <div ref={emblaRef} className="absolute inset-0 overflow-hidden">
         <div className="flex h-full">
-          {slides.map((s) => (
+          {slides.map((s, i) => (
             <div key={s.id} className="relative flex-none w-full h-full bg-brand-dark">
               {/* Full-bleed background image with left gradient */}
               <Image
@@ -50,7 +50,7 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
                 alt="Pondok Pesantren Darussalam Bacan"
                 fill
                 className="object-cover opacity-70"
-                priority={s.id === 1}
+                priority={i === 0}
               />
               {/* Gradient: strong on left (text area), fades to transparent on right */}
               <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/50 to-brand-dark/10" />

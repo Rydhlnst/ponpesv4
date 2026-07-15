@@ -1,7 +1,7 @@
 "use client"
 
 import { Heart, MessageCircle, Copy, CheckCheck } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 import { useState } from "react"
 
 interface Bank {
@@ -47,20 +47,15 @@ export function ProgramSidebar({
       )}
 
       {/* CTA */}
-      <Button
-        asChild
-        size="lg"
-        className="w-full bg-primary hover:bg-primary/90 rounded-none h-12 font-bold text-sm"
+      <a
+        href={`https://wa.me/${whatsapp}?text=${encodeURIComponent(waMessage)}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={buttonVariants({ size: "lg", className: "w-full bg-primary hover:bg-primary/90 rounded-none h-12 font-bold text-sm" })}
       >
-        <a
-          href={`https://wa.me/${whatsapp}?text=${encodeURIComponent(waMessage)}`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Heart className="w-4 h-4 fill-white" />
-          Donasi Sekarang
-        </a>
-      </Button>
+        <Heart className="w-4 h-4 fill-white" />
+        Donasi Sekarang
+      </a>
 
       {/* Banks */}
       <div className="border border-gray-100 bg-white">
