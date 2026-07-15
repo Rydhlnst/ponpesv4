@@ -2,13 +2,17 @@
 
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import { BookOpen, GraduationCap, Heart, Sprout, Building2 } from "lucide-react"
+import { BookOpen, GraduationCap, Heart, Sprout, Building2, Users, Mic, School } from "lucide-react"
 import Link from "next/link"
 
 const programs = [
   { icon: BookOpen, label: "Tahfizh Al-Qur'an", desc: "Hafalan 30 juz", href: "/program/tahfizh" },
-  { icon: GraduationCap, label: "Pendidikan MTs & MA", desc: "Formal + pesantren", href: "/program/pendidikan" },
-  { icon: Heart, label: "Program Sosial & Yatim", desc: "26 yatim dibina gratis", href: "/program/kafil-yatim" },
+  { icon: School, label: "SMP Tahfizh", desc: "Jenjang SMP pesantren", href: "/program/smp-tahfizh" },
+  { icon: GraduationCap, label: "Madrasah Aliyah", desc: "Jenjang SMA pesantren", href: "/program/madrasah-aliyah" },
+  { icon: BookOpen, label: "TPQ", desc: "Belajar Al-Qur'an dasar", href: "/program/tpq" },
+  { icon: Heart, label: "LKSA Panti Asuhan", desc: "26 yatim dibina gratis", href: "/program/lksa" },
+  { icon: Users, label: "Majelis Taklim", desc: "Kajian rutin komunitas", href: "/program/majelis-taklim" },
+  { icon: Mic, label: "Pengkaderan Dai", desc: "Cetak dai & ulama muda", href: "/program/pengkaderan-dai" },
   { icon: Sprout, label: "Kemandirian Usaha", desc: "Air kemasan & ternak", href: "/program/pengembangan-usaha" },
   { icon: Building2, label: "Wakaf & Pembangunan", desc: "Masjid & lahan wakaf", href: "/program/wakaf-masjid" },
 ]

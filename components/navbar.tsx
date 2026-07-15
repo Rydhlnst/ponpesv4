@@ -13,7 +13,12 @@ const navItems = [
     label: "Program",
     children: [
       { label: "Tahfizh Al-Qur'an", href: "/program/tahfizh" },
-      { label: "Pendidikan MTs & MA", href: "/program/pendidikan" },
+      { label: "SMP Tahfizh", href: "/program/smp-tahfizh" },
+      { label: "Madrasah Aliyah", href: "/program/madrasah-aliyah" },
+      { label: "TPQ", href: "/program/tpq" },
+      { label: "LKSA Panti Asuhan", href: "/program/lksa" },
+      { label: "Majelis Taklim", href: "/program/majelis-taklim" },
+      { label: "Pengkaderan Dai", href: "/program/pengkaderan-dai" },
       { label: "Program Sosial & Yatim", href: "/program/kafil-yatim" },
       { label: "Kemandirian Usaha", href: "/program/pengembangan-usaha" },
       { label: "Wakaf & Pembangunan", href: "/program/wakaf-masjid" },

@@ -176,7 +176,7 @@ export default function TentangPage() {
                 { label: "Sejarah Berdiri", href: "/tentang/sejarah", desc: "Perjalanan sejak 2018" },
                 { label: "Visi & Misi", href: "/tentang/visi-misi", desc: "1 Desa 1 Rumah Qur'an" },
                 { label: "Struktur Organisasi", href: "/tentang/struktur", desc: "Pimpinan & pengurus" },
-                { label: "Galeri Foto", href: "/tentang/galeri", desc: "32 foto kegiatan" },
+                { label: "Galeri Foto", href: "/tentang/galeri", desc: "36 foto kegiatan" },
               ].map((p) => (
                 <Link key={p.href} href={p.href} className="group border border-gray-200 hover:border-primary p-4 bg-white transition-colors">
                   <p className="font-semibold text-gray-900 group-hover:text-primary text-sm transition-colors">{p.label}</p>
