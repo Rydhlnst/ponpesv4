@@ -1,0 +1,34 @@
+{
+  "slides": [
+    {
+      "id": "1",
+      "category": "Pondok Pesantren — Bacan, Halmahera Selatan",
+      "categoryIcon": "Moon",
+      "title": "Mendidik Generasi\nQur'ani Mandiri\ndi Pulau Bacan",
+      "subtitle": "Berdiri 8 Januari 2018 di Desa Kupal, Halmahera Selatan. Membina 110 santri putra-putri dengan kurikulum Tahfizh, MTs, dan MA yang terintegrasi.",
+      "cta": "Profil Pesantren",
+      "ctaHref": "/tentang",
+      "imageSrc": "/images/gallery/gallery-07.jpg"
+    },
+    {
+      "id": "2",
+      "category": "Program Unggulan",
+      "categoryIcon": "BookOpen",
+      "title": "Tahfizh, MTs &\nMA — Pendidikan\nUtuh untuk Santri",
+      "subtitle": "Hafalan Al-Qur'an 30 juz berjalan seiring pendidikan formal berjenjang. Santri kami tumbuh sebagai hafizh sekaligus generasi berprestasi akademik.",
+      "cta": "Lihat Program",
+      "ctaHref": "/program/tahfizh",
+      "imageSrc": "/images/gallery/gallery-14.jpg"
+    },
+    {
+      "id": "3",
+      "category": "Visi & Kemandirian",
+      "categoryIcon": "Users",
+      "title": "1 Desa 1 Rumah\nQur'an — Mandiri\nEkonomi & Spiritual",
+      "subtitle": "Dari usaha air galon, peternakan, hingga pertanian — Darussalam Bacan membangun kemandirian ekonomi pesantren yang nyata dan berkelanjutan.",
+      "cta": "Visi & Misi",
+      "ctaHref": "/tentang/visi-misi",
+      "imageSrc": "/images/gallery/gallery-20.jpg"
+    }
+  ]
+}

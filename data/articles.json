@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "title": "Wisuda Tahfizh: 7 Santri Yatim Selesaikan Hafalan 30 Juz",
+    "excerpt": "Momen yang mengharukan. Tujuh santri yatim Darussalam Bacan berhasil menyelesaikan hafalan Al-Qur'an 30 juz setelah dua tahun berjuang keras. Mereka kini siap menjadi imam dan pengajar di kampung halaman masing-masing.",
+    "date": "Maret 2026",
+    "category": "Prestasi",
+    "image": "/images/gallery/gallery-04.jpg",
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "2",
+    "title": "Ramadhan di Darussalam: Santri Yatim Khatam Qur'an Bersama",
+    "excerpt": "Bulan Ramadhan 1447 H menjadi momen spesial bagi 26 santri yatim Darussalam Bacan. Mereka menghabiskan sahur, shalat tarawih, dan tadarus bersama dalam suasana kekeluargaan yang hangat.",
+    "date": "Maret 2026",
+    "category": "Kegiatan",
+    "image": "/images/gallery/gallery-11.jpg",
+    "featured": false,
+    "published": true
+  },
+  {
+    "id": "3",
+    "title": "Cerita Fauzi: Yatim dari Bacan Selatan yang Kini Hafizh",
+    "excerpt": "Fauzi (bukan nama sebenarnya), 15 tahun, kehilangan ayahnya saat masih kelas 5 SD. Dua tahun di Darussalam Bacan mengubah hidupnya. Kini ia sudah hafal 15 juz dan bercita-cita menjadi imam masjid.",
+    "date": "Februari 2026",
+    "category": "Kisah Nyata",
+    "image": "/images/gallery/gallery-16.jpg",
+    "featured": false,
+    "published": true
+  },
+  {
+    "id": "4",
+    "title": "Laporan Transparansi: Penggunaan Dana Kafil Yatim Triwulan I 2026",
+    "excerpt": "Sebagai bentuk amanah kepada seluruh kafil dan donatur, Darussalam Bacan menerbitkan laporan penggunaan dana triwulan pertama 2026.",
+    "date": "Januari 2026",
+    "category": "Laporan",
+    "image": "/images/gallery/gallery-21.jpg",
+    "featured": false,
+    "published": true
+  }
+]

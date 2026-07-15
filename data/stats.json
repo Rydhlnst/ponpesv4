@@ -1,0 +1,8 @@
+{
+  "items": [
+    { "value": 110, "suffix": "+", "label": "Santri Aktif", "desc": "Putra & putri, MTs dan MA" },
+    { "value": 26, "suffix": "", "label": "Santri Yatim", "desc": "Dibina penuh, gratis tanpa syarat" },
+    { "value": 8, "suffix": " Thn", "label": "Tahun Berdiri", "desc": "Sejak 8 Januari 2018 di Bacan" },
+    { "value": 24, "suffix": "+", "label": "Tenaga Pendidik", "desc": "Guru & pengasuh berpengalaman" }
+  ]
+}
