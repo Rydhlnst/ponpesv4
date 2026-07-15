@@ -154,7 +154,7 @@ export default function TahfizhPage() {
         </section>
 
         {/* Pembimbing Al-Qur'an Highlight */}
-        <section className="py-16 bg-brand-dark">
+        <section className="py-16 bg-gray-50 border-t border-gray-100">
           <div className="container mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -168,7 +168,7 @@ export default function TahfizhPage() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.06 }}
-              className="text-2xl md:text-3xl font-black text-white mb-10"
+              className="text-2xl md:text-3xl font-black text-gray-900 mb-10"
             >
               Pembimbing Al-Qur'an
             </motion.h2>
@@ -216,19 +216,19 @@ export default function TahfizhPage() {
               >
                 <div>
                   <p className="text-primary text-xs font-semibold uppercase tracking-widest mb-2">Pembimbing Tahfizh</p>
-                  <h3 className="text-2xl md:text-3xl font-black text-white leading-tight mb-1">
+                  <h3 className="text-2xl md:text-3xl font-black text-gray-900 leading-tight mb-1">
                     Syeikh Al Hafizh
                   </h3>
                   <h3 className="text-2xl md:text-3xl font-black text-primary leading-tight">
                     Ahmad Younis
                   </h3>
-                  <p className="text-gray-400 text-sm mt-2 font-medium">🇵🇸 Palestina</p>
+                  <p className="text-gray-500 text-sm mt-2 font-medium">🇵🇸 Palestina</p>
                 </div>
 
-                <div className="border-l-2 border-primary pl-4 space-y-3 text-gray-300 text-sm leading-relaxed">
+                <div className="border-l-2 border-primary pl-4 space-y-3 text-gray-600 text-sm leading-relaxed">
                   <p>
                     Pondok Pesantren Darussalam Bacan mendapat kehormatan besar dengan kehadiran
-                    <strong className="text-white"> Syeikh Al Hafizh Ahmad Younis</strong> dari Palestina sebagai
+                    <strong className="text-gray-900"> Syeikh Al Hafizh Ahmad Younis</strong> dari Palestina sebagai
                     Pembimbing Al-Qur'an.
                   </p>
                   <p>
@@ -245,9 +245,9 @@ export default function TahfizhPage() {
                     { label: "Peran", value: "Pembimbing Al-Qur'an" },
                     { label: "Kegiatan", value: "Tasyakuran Khatam" },
                   ].map((item) => (
-                    <div key={item.label} className="border border-white/10 px-4 py-3 bg-white/5">
-                      <p className="text-gray-500 text-xs mb-0.5">{item.label}</p>
-                      <p className="text-white text-sm font-semibold">{item.value}</p>
+                    <div key={item.label} className="border border-gray-200 px-4 py-3 bg-white">
+                      <p className="text-gray-400 text-xs mb-0.5">{item.label}</p>
+                      <p className="text-gray-900 text-sm font-semibold">{item.value}</p>
                     </div>
                   ))}
                 </div>
