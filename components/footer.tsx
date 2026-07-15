@@ -60,7 +60,7 @@ const legalLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-gray-950 text-gray-400">
+    <footer className="bg-brand-dark text-white/60">
       <div className="container mx-auto px-4 py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
@@ -73,25 +73,25 @@ export function Footer() {
                 <p className="text-primary text-xs">Pondok Pesantren</p>
               </div>
             </Link>
-            <p className="text-sm leading-relaxed mb-6 max-w-sm text-gray-500">
+            <p className="text-sm leading-relaxed mb-6 max-w-sm text-white/50">
               Pondok Pesantren Darussalam Bacan berdiri sejak 8 Januari 2018 di Pulau Bacan,
               Halmahera Selatan. Mencetak generasi Qur'ani yang mandiri secara ekonomi dan spiritual.
             </p>
             <div className="space-y-2.5 text-sm">
               <div className="flex gap-2.5 items-start">
                 <MapPin className="w-4 h-4 text-primary flex-none mt-0.5" />
-                <span className="text-gray-500 leading-relaxed">
+                <span className="text-white/50 leading-relaxed">
                   Jl. Pesantren No. 05, RT 03, Desa Kupal,
                   Kec. Bacan Selatan, Kab. Halmahera Selatan, Maluku Utara
                 </span>
               </div>
               <div className="flex gap-2.5 items-center">
                 <Phone className="w-4 h-4 text-primary flex-none" />
-                <span className="text-gray-500">+62 822-9782-9892</span>
+                <span className="text-white/50">+62 822-9782-9892</span>
               </div>
               <div className="flex gap-2.5 items-center">
                 <Mail className="w-4 h-4 text-primary flex-none" />
-                <span className="text-gray-500">ponpesantren.darussalam@bacan.com</span>
+                <span className="text-white/50">ponpesantren.darussalam@bacan.com</span>
               </div>
             </div>
           </div>
@@ -104,7 +104,7 @@ export function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-500 hover:text-primary transition-colors"
+                    className="text-sm text-white/50 hover:text-white transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -121,7 +121,7 @@ export function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-500 hover:text-primary transition-colors"
+                    className="text-sm text-white/50 hover:text-white transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -131,10 +131,10 @@ export function Footer() {
           </div>
         </div>
 
-        <Separator className="my-8 bg-gray-800" />
+        <Separator className="my-8 bg-white/10" />
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-5">
-          <p className="text-xs text-gray-600 text-center md:text-left">
+          <p className="text-xs text-white/35 text-center md:text-left">
             © 2026 Pondok Pesantren Darussalam Bacan. Seluruh hak cipta dilindungi.
           </p>
           <div className="flex items-center gap-5">
@@ -142,7 +142,7 @@ export function Footer() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-xs text-gray-600 hover:text-primary transition-colors"
+                className="text-xs text-white/35 hover:text-primary transition-colors"
               >
                 {link.label}
               </Link>
@@ -154,7 +154,7 @@ export function Footer() {
                 key={s.label}
                 href={s.href}
                 aria-label={s.label}
-                className="w-8 h-8 bg-gray-800 hover:bg-primary flex items-center justify-center transition-colors text-gray-400 hover:text-white"
+                className="w-8 h-8 bg-white/10 hover:bg-white flex items-center justify-center transition-colors text-white/60 hover:text-brand-dark"
               >
                 {s.icon}
               </a>

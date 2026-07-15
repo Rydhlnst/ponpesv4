@@ -54,9 +54,9 @@
 
 :root {
   /* Brand tokens */
-  --brand-dark: oklch(0.1 0.04 150);           /* #0a1f10 — latar gelap hero/stats/quote */
-  --brand-dark-border: oklch(0.18 0.04 150);   /* border halus di atas brand-dark */
-  --brand-muted: oklch(0.55 0.12 150);         /* teks hijau muted di atas latar gelap */
+  --brand-dark: oklch(0.35 0.11 150);           /* deep forest green — navbar, hero, stats, quote */
+  --brand-dark-border: oklch(0.42 0.11 150);    /* border halus di atas brand-dark */
+  --brand-muted: oklch(0.80 0.13 150);          /* light green muted text di atas latar hijau */
 
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);

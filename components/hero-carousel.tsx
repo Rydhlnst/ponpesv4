@@ -77,7 +77,7 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
                 transition={{ delay: 0.05 }}
                 className="inline-flex items-center gap-2 mb-6"
               >
-                <div className="w-6 h-0.5 bg-primary" />
+                <div className="w-6 h-0.5 bg-white/60" />
                 <span className="text-brand-muted text-xs font-semibold uppercase tracking-widest flex items-center gap-1.5">
                   <CategoryIcon className="w-3.5 h-3.5" />
                   {slide.category}
@@ -97,7 +97,7 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="text-gray-400 text-base leading-relaxed mb-8 max-w-md"
+                className="text-white/65 text-base leading-relaxed mb-8 max-w-md"
               >
                 {slide.subtitle}
               </motion.p>

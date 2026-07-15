@@ -24,7 +24,7 @@ export function PageHero({ title, subtitle, crumbs, accent }: PageHeroProps) {
         <motion.nav
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          className="flex items-center gap-1.5 text-xs text-gray-500 mb-6 flex-wrap"
+          className="flex items-center gap-1.5 text-xs text-white/40 mb-6 flex-wrap"
         >
           <Link href="/" className="hover:text-white transition-colors">Beranda</Link>
           {crumbs.map((c, i) => (
@@ -65,7 +65,7 @@ export function PageHero({ title, subtitle, crumbs, accent }: PageHeroProps) {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.14 }}
-            className="text-gray-400 text-base leading-relaxed max-w-2xl"
+            className="text-white/60 text-base leading-relaxed max-w-2xl"
           >
             {subtitle}
           </motion.p>

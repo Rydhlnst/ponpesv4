@@ -50,8 +50,8 @@ export function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 border-b transition-colors duration-300",
         scrolled
-          ? "bg-white border-gray-200"
-          : "bg-brand-dark/95 border-white/10 backdrop-blur-sm"
+          ? "bg-white border-green-100"
+          : "bg-brand-dark border-white/10"
       )}
     >
       <div className="container mx-auto px-6">
@@ -116,7 +116,7 @@ export function Navbar() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -6 }}
                       transition={{ duration: 0.12 }}
-                      className="absolute top-full left-0 w-52 bg-white border border-gray-200 shadow-xl z-50"
+                      className="absolute top-full left-0 w-52 bg-white border border-green-100 shadow-xl z-50"
                     >
                       {item.children.map((child, i) => (
                         <Link

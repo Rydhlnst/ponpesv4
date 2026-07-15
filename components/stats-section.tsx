@@ -46,14 +46,14 @@ export function StatsSection({ items }: { items: StatItem[] }) {
                 className="px-8 py-10 first:pl-0 last:pr-0"
               >
                 <div className="flex items-center gap-2 mb-4">
-                  <Icon className="w-4 h-4 text-brand-muted" />
-                  <div className="w-8 h-0.5 bg-primary" />
+                  <Icon className="w-4 h-4 text-white/50" />
+                  <div className="w-8 h-0.5 bg-white/40" />
                 </div>
                 <p className="text-4xl font-black text-white tracking-tight mb-1">
                   <Counter to={s.value} suffix={s.suffix} />
                 </p>
                 <p className="text-brand-muted font-semibold text-sm mb-1">{s.label}</p>
-                <p className="text-gray-500 text-xs">{s.desc}</p>
+                <p className="text-white/40 text-xs">{s.desc}</p>
               </motion.div>
             )
           })}

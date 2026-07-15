@@ -18,11 +18,11 @@ export function QuoteSection() {
                 initial={{ scaleY: 0 }}
                 animate={inView ? { scaleY: 1 } : {}}
                 transition={{ duration: 0.6 }}
-                className="hidden md:block w-0.5 h-24 bg-primary origin-top"
+                className="hidden md:block w-0.5 h-24 bg-white/40 origin-top"
               />
               <div>
                 <p className="text-brand-muted text-xs font-semibold uppercase tracking-widest mb-1">Hadits</p>
-                <p className="text-gray-500 text-xs">HR. Bukhari & Muslim</p>
+                <p className="text-white/40 text-xs">HR. Bukhari & Muslim</p>
               </div>
             </div>
 
@@ -43,7 +43,7 @@ export function QuoteSection() {
                 initial={{ scaleX: 0 }}
                 animate={inView ? { scaleX: 1 } : {}}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="w-full h-px bg-white/10 mb-8 origin-left"
+                className="w-full h-px bg-white/15 mb-8 origin-left"
               />
 
               {/* Translation */}
@@ -51,7 +51,7 @@ export function QuoteSection() {
                 initial={{ opacity: 0, y: 12 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.3 }}
-                className="text-lg md:text-xl text-gray-300 leading-relaxed"
+                className="text-lg md:text-xl text-white/80 leading-relaxed"
               >
                 "Aku dan pengasuh anak yatim akan berada di surga seperti ini"
                 <span className="text-brand-muted font-semibold"> — seraya beliau menunjukkan jari telunjuk dan jari tengah.</span>
