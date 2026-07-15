@@ -18,22 +18,22 @@ interface PageHeroProps {
 
 export function PageHero({ title, subtitle, crumbs, accent }: PageHeroProps) {
   return (
-    <section className="bg-brand-dark pt-20 border-b border-white/5">
+    <section className="bg-white pt-20 border-b border-gray-100">
       <div className="container mx-auto px-6 py-14">
         {/* Breadcrumb */}
         <motion.nav
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          className="flex items-center gap-1.5 text-xs text-white/40 mb-6 flex-wrap"
+          className="flex items-center gap-1.5 text-xs text-gray-400 mb-6 flex-wrap"
         >
-          <Link href="/" className="hover:text-white transition-colors">Beranda</Link>
+          <Link href="/" className="hover:text-primary transition-colors">Beranda</Link>
           {crumbs.map((c, i) => (
             <span key={i} className="flex items-center gap-1.5">
               <ChevronRight className="w-3 h-3 flex-none" />
               {c.href && c.href !== "#" ? (
-                <Link href={c.href} className="hover:text-white transition-colors">{c.label}</Link>
+                <Link href={c.href} className="hover:text-primary transition-colors">{c.label}</Link>
               ) : (
-                <span className="text-white/80">{c.label}</span>
+                <span className="text-gray-700">{c.label}</span>
               )}
             </span>
           ))}
@@ -55,7 +55,7 @@ export function PageHero({ title, subtitle, crumbs, accent }: PageHeroProps) {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.08 }}
-          className="text-4xl md:text-5xl font-black text-white leading-tight tracking-tight mb-4"
+          className="text-4xl md:text-5xl font-black text-gray-900 leading-tight tracking-tight mb-4"
         >
           {title}
         </motion.h1>
@@ -65,7 +65,7 @@ export function PageHero({ title, subtitle, crumbs, accent }: PageHeroProps) {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.14 }}
-            className="text-white/60 text-base leading-relaxed max-w-2xl"
+            className="text-gray-500 text-base leading-relaxed max-w-2xl"
           >
             {subtitle}
           </motion.p>

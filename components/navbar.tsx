@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { buttonVariants } from "@/components/ui/button"
 import { Menu, X, ChevronDown, Heart } from "lucide-react"
@@ -34,25 +34,13 @@ const navItems = [
 ]
 
 export function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null)
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60)
-    window.addEventListener("scroll", onScroll)
-    return () => window.removeEventListener("scroll", onScroll)
-  }, [])
-
   return (
     <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 border-b transition-colors duration-300",
-        scrolled
-          ? "bg-white border-green-100"
-          : "bg-brand-dark border-white/10"
-      )}
+      className="fixed top-0 left-0 right-0 z-50 border-b bg-white border-green-100"
     >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
@@ -60,10 +48,10 @@ export function Navbar() {
           <Link href="/" className="flex items-center gap-3">
             <LogoImage size={32} />
             <div className="leading-none">
-              <p className={cn("font-bold text-sm", scrolled ? "text-gray-900" : "text-white")}>
+              <p className="font-bold text-sm text-gray-900">
                 Darussalam Bacan
               </p>
-              <p className={cn("text-[11px] mt-0.5", scrolled ? "text-primary" : "text-brand-muted")}>
+              <p className="text-[11px] mt-0.5 text-primary">
                 Pondok Pesantren
               </p>
             </div>
@@ -80,12 +68,7 @@ export function Navbar() {
               >
                 {item.children ? (
                   <button
-                    className={cn(
-                      "flex items-center gap-1 px-4 h-20 text-sm font-medium border-b-2 border-transparent transition-colors",
-                      scrolled
-                        ? "text-gray-600 hover:text-primary hover:border-primary"
-                        : "text-white/75 hover:text-white hover:border-white"
-                    )}
+                    className="flex items-center gap-1 px-4 h-20 text-sm font-medium border-b-2 border-transparent text-gray-600 hover:text-primary hover:border-primary transition-colors"
                   >
                     {item.label}
                     <motion.span
@@ -98,12 +81,7 @@ export function Navbar() {
                 ) : (
                   <Link
                     href={(item as { label: string; href: string }).href}
-                    className={cn(
-                      "flex items-center gap-1 px-4 h-20 text-sm font-medium border-b-2 border-transparent transition-colors",
-                      scrolled
-                        ? "text-gray-600 hover:text-primary hover:border-primary"
-                        : "text-white/75 hover:text-white hover:border-white"
-                    )}
+                    className="flex items-center gap-1 px-4 h-20 text-sm font-medium border-b-2 border-transparent text-gray-600 hover:text-primary hover:border-primary transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -146,7 +124,7 @@ export function Navbar() {
               Hubungi Kami
             </Link>
             <button
-              className={cn("md:hidden p-1.5", scrolled ? "text-gray-700" : "text-white")}
+              className="md:hidden p-1.5 text-gray-700"
               onClick={() => setMobileOpen(!mobileOpen)}
             >
               {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}

@@ -32,9 +32,9 @@ export function StatsSection({ items }: { items: StatItem[] }) {
   const inView = useInView(ref, { once: true, margin: "-80px" })
 
   return (
-    <section ref={ref} className="py-16 bg-brand-dark">
+    <section ref={ref} className="py-16 bg-white border-t border-b border-gray-100">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-0 divide-x divide-white/10">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-0 divide-x divide-gray-100">
           {items.map((s, i) => {
             const Icon = ICONS[i % ICONS.length]
             return (
@@ -46,14 +46,14 @@ export function StatsSection({ items }: { items: StatItem[] }) {
                 className="px-8 py-10 first:pl-0 last:pr-0"
               >
                 <div className="flex items-center gap-2 mb-4">
-                  <Icon className="w-4 h-4 text-white/50" />
-                  <div className="w-8 h-0.5 bg-white/40" />
+                  <Icon className="w-4 h-4 text-primary" />
+                  <div className="w-8 h-0.5 bg-primary" />
                 </div>
-                <p className="text-4xl font-black text-white tracking-tight mb-1">
+                <p className="text-4xl font-black text-gray-900 tracking-tight mb-1">
                   <Counter to={s.value} suffix={s.suffix} />
                 </p>
-                <p className="text-brand-muted font-semibold text-sm mb-1">{s.label}</p>
-                <p className="text-white/40 text-xs">{s.desc}</p>
+                <p className="text-primary font-semibold text-sm mb-1">{s.label}</p>
+                <p className="text-gray-400 text-xs">{s.desc}</p>
               </motion.div>
             )
           })}
