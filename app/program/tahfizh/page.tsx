@@ -153,6 +153,109 @@ export default function TahfizhPage() {
           </div>
         </section>
 
+        {/* Pembimbing Al-Qur'an Highlight */}
+        <section className="py-16 bg-brand-dark">
+          <div className="container mx-auto px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="flex items-center gap-2 mb-2"
+            >
+              <div className="w-6 h-0.5 bg-primary" />
+              <span className="text-primary text-xs font-semibold uppercase tracking-widest">Tamu Istimewa</span>
+            </motion.div>
+            <motion.h2
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.06 }}
+              className="text-2xl md:text-3xl font-black text-white mb-10"
+            >
+              Pembimbing Al-Qur'an
+            </motion.h2>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+              {/* Images */}
+              <motion.div
+                initial={{ opacity: 0, x: -16 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.1 }}
+                className="grid grid-cols-2 gap-2"
+              >
+                <div className="relative col-span-2 h-56 overflow-hidden">
+                  <Image
+                    src="/images/gallery/gallery-30.jpg"
+                    alt="Tasyakuran Khatam Al-Qur'an - Santri Darussalam Bacan"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="relative h-44 overflow-hidden">
+                  <Image
+                    src="/images/gallery/gallery-31.jpg"
+                    alt="Syeikh Al Hafizh Ahmad Younis bersama Pimpinan Pesantren"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="relative h-44 overflow-hidden">
+                  <Image
+                    src="/images/gallery/gallery-32.jpg"
+                    alt="Syeikh Al Hafizh Ahmad Younis menyampaikan tausiyah"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </motion.div>
+
+              {/* Bio */}
+              <motion.div
+                initial={{ opacity: 0, x: 16 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.14 }}
+                className="space-y-6"
+              >
+                <div>
+                  <p className="text-primary text-xs font-semibold uppercase tracking-widest mb-2">Pembimbing Tahfizh</p>
+                  <h3 className="text-2xl md:text-3xl font-black text-white leading-tight mb-1">
+                    Syeikh Al Hafizh
+                  </h3>
+                  <h3 className="text-2xl md:text-3xl font-black text-primary leading-tight">
+                    Ahmad Younis
+                  </h3>
+                  <p className="text-gray-400 text-sm mt-2 font-medium">🇵🇸 Palestina</p>
+                </div>
+
+                <div className="border-l-2 border-primary pl-4 space-y-3 text-gray-300 text-sm leading-relaxed">
+                  <p>
+                    Pondok Pesantren Darussalam Bacan mendapat kehormatan besar dengan kehadiran
+                    <strong className="text-white"> Syeikh Al Hafizh Ahmad Younis</strong> dari Palestina sebagai
+                    Pembimbing Al-Qur'an.
+                  </p>
+                  <p>
+                    Beliau hadir dalam acara Tasyakuran Khatam Al-Qur'an dan Pelepasan Santriwan-Santriwati
+                    Madrasah Aliyah & SMP Tahfizh Darussalam, membimbing dan memberikan semangat kepada
+                    para hafizh muda Darussalam Bacan.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3">
+                  {[
+                    { label: "Asal Negara", value: "Palestina" },
+                    { label: "Gelar", value: "Al Hafizh" },
+                    { label: "Peran", value: "Pembimbing Al-Qur'an" },
+                    { label: "Kegiatan", value: "Tasyakuran Khatam" },
+                  ].map((item) => (
+                    <div key={item.label} className="border border-white/10 px-4 py-3 bg-white/5">
+                      <p className="text-gray-500 text-xs mb-0.5">{item.label}</p>
+                      <p className="text-white text-sm font-semibold">{item.value}</p>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         <section className="py-12 bg-gray-50 border-t border-gray-100">
           <div className="container mx-auto px-6">
             <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-5">Program Lainnya</p>

@@ -6,7 +6,7 @@ import Image from "next/image"
 import { X, ChevronLeft, ChevronRight, ZoomIn, Images } from "lucide-react"
 import { cn } from "@/lib/utils"
 
-const TOTAL = 29
+const TOTAL = 32
 const INITIAL_COUNT = 12
 
 const galleryImages = Array.from({ length: TOTAL }, (_, i) => ({
